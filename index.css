@@ -1,13 +1,15 @@
 :root {
-    font-family: 'monoMMM_5', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     --bg-color: white;
     --txt-color: black;
     --github-icon: url(static/github-mark.svg);
+    --font: 'monoMMM_5', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --contrast-color: none;
     font-size: larger;
+    font-family: var(--font);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,7 +34,7 @@
 
 
 body {
-    margin: 2em;
+    margin: 0em 2em 0;
     background-color: var(--bg-color);
     color: var(--txt-color);
     max-width: 100%;
@@ -51,7 +53,7 @@ main>input {
     font-size: large;
     text-align: center;
     max-width: fit-content;
-    font-family: 'monoMMM_5', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
 }
 
 main>input::placeholder {
@@ -64,20 +66,23 @@ main>input:focus {
     outline: none;
 }
 
-footer>a {
+.sticky-right-button {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 1vh;
+    right: 1vw;
     border: none;
     font-size: small;
     padding: 1em;
     border-radius: .5em;
+    max-width: 10vh;
+    max-height: 10vh;
+    overflow: hidden;
 }
-footer>a:hover {
+.sticky-right-button:hover {
     background-color: rgba(127, 127, 127, 0.5);
     transition: background-color 400ms ease-in;
 }
-footer>a>img {
+.sticky-right-button>img {
     height: 3em;
     width: 3em;
 }
@@ -90,9 +95,9 @@ footer>a>img {
     }
 }
 #hacks-list > li {
-    opacity: 1;
 	animation: fadeIn 250ms ease-in 0ms 1;
 }
 #errors > li {
+    animation: fadeIn 250ms ease-in 0ms 1;
     color: rgb(194, 44, 44);
 }
