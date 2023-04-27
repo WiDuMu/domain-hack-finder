@@ -6,6 +6,7 @@
     --bg-color: white;
     --txt-color: black;
     --github-icon: url(static/github-mark.svg);
+    --contrast-color: none;
     font-size: larger;
 }
 
@@ -17,21 +18,30 @@
     }
 }
 
+@media (prefers-contrast: more) {
+    :root {
+        --contrast-color: var(--txt-color);
+    }
+}
+
 .flex-col-center {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 body {
     margin: 1em;
     background-color: var(--bg-color);
     color: var(--txt-color);
+    width: 100%;
+    height: 100%;
 }
 
 main>input {
     width: 100%;
-    border: 0;
+    border: 1px solid var(--contrast-color);
     border-bottom: 1px solid var(--txt-color);
     background-color: var(--bg-color);
     caret-color: var(--txt-color);
@@ -51,12 +61,15 @@ main>input:focus {
     outline: none;
 }
 
-footer>button {
+footer>a>img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     height: 3em;
     width: 3em;
     border: none;
     background-color: var(--bg-color);
-    background-image: var(--github-icon);
+    /* background-image: var(--github-icon); */
     background-size: contain;
     background-repeat: no-repeat;
 }
