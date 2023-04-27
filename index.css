@@ -51,6 +51,7 @@ main>input {
     font-size: large;
     text-align: center;
     max-width: fit-content;
+    font-family: 'monoMMM_5', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main>input::placeholder {
