@@ -32,14 +32,15 @@
 
 
 body {
-    margin: 1em;
+    margin: 2em;
     background-color: var(--bg-color);
     color: var(--txt-color);
-    width: 100%;
+    max-width: 100%;
     height: 100%;
 }
 
 main>input {
+    min-width: 100%;
     width: 100%;
     border: 1px solid var(--contrast-color);
     border-bottom: 1px solid var(--txt-color);
@@ -48,11 +49,12 @@ main>input {
     margin-block: 1em;
     color: var(--txt-color);
     font-size: large;
+    text-align: center;
+    max-width: fit-content;
 }
 
 main>input::placeholder {
     font-style: italic;
-    
     opacity: 0.5;
     color: var(--txt-color)
 }
@@ -61,11 +63,35 @@ main>input:focus {
     outline: none;
 }
 
-footer>a>img {
+footer>a {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 5px;
+    right: 5px;
+    border: none;
+    font-size: small;
+    padding: 1em;
+    border-radius: .5em;
+}
+footer>a:hover {
+    background-color: rgba(127, 127, 127, 0.5);
+    transition: background-color 400ms ease-in;
+}
+footer>a>img {
     height: 3em;
     width: 3em;
-    border: none;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#hacks-list > li {
+    opacity: 1;
+	animation: fadeIn 250ms ease-in 0ms 1;
+}
+#errors > li {
+    color: rgb(194, 44, 44);
 }

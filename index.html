@@ -6,16 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Domain hack calculator</title>
-  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="static/fonts.css">
   <link rel="stylesheet" href="index.css">
   <script src="index.js" type="module"></script>
 </head>
 
 <body class="flex-col-center">
-  <header>
+  <header class="flex-col-center">
     <h1>Domain hack calculator!</h1>
+    <div class="flex-col-center card">
+      <h2>What is a domain hack?</h2>
+      <blockquote>A <a href="https://en.wikipedia.org/wiki/Domain_hack">domain hack</a> is a domain name that suggests a
+        word, phrase, or name when combining two or more
+        levels of that domain. For example, "bir.ds" and "examp.le".</blockquote>
+    </div>
   </header>
   <main class="flex-col-center">
+    <ul id="errors">
+    </ul>
     <label for="lookup">Enter your name for possible hacks:</label>
     <input id="lookup" type="text" name="lookup" autofocus placeholder="name here">
     <ul id="hacks-list">
@@ -23,7 +31,8 @@
     </ul>
   </main>
   <footer>
-    <a href="https://github.com/WiDuMu/domain-hack-finder"><img alt="github link" src="static/responsive-github-mark.svg"></a>
+    <a href="https://github.com/WiDuMu/domain-hack-finder" class="flex-col-center"><img alt="github link"
+        src="static/responsive-github-mark.svg"><span>Made by WiDuMu</span></a>
   </footer>
 </body>
 
