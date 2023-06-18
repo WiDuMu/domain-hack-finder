@@ -1,5 +1,4 @@
 :root {
-   
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -10,6 +9,7 @@
     --contrast-color: none;
     font-size: larger;
     font-family: var(--font);
+    text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
