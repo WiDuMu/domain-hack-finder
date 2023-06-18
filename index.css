@@ -82,8 +82,9 @@ main>input:focus {
     font-size: small;
     padding: 1em;
     border-radius: .5em;
-    max-width: 10vh;
+    max-width: 10vw;
     max-height: 10vh;
+    aspect-ratio: 1;
     overflow: hidden;
 }
 
