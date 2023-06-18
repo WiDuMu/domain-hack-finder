@@ -67,7 +67,7 @@ main>input::placeholder {
 }
 
 ul {
-    list-style: inside square;
+    list-style: square;
 }
 
 main>input:focus {
