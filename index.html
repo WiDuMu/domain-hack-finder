@@ -17,10 +17,17 @@
     <h1>Domain hack calculator!</h1>
     <div class="flex-col-center card">
       <h2>What is a domain hack?</h2>
-      <blockquote>A <a href="https://en.wikipedia.org/wiki/Domain_hack">domain hack</a> is a domain name that suggests a
+      <blockquote>A <dfn><a href="https://en.wikipedia.org/wiki/Domain_hack">domain hack</a></dfn> is a domain name that suggests a
         word, phrase, or name when combining two or more
         levels of that domain. For example, "bir.ds" and "examp.le".</blockquote>
     </div>
+    <details>
+      <summary>Notes:</summary>
+      <ul>
+        <li>ICANN awards branded Generic Top-Level Domains (gTLDs). These are TLDs that are reserved for a specific company, for example, ".mitsubishi" or ".google". I have done my best to filter non-public domain names from the list, but it still may suggest non-open ones.</li>
+        <li>At present, this does not check on whether the domain is claimed.</li>
+      </ul>
+    </details>
   </header>
   <main class="flex-col-center">
     <ul id="errors">
