@@ -68,6 +68,11 @@ main>input::placeholder {
 
 ul {
     list-style: square;
+    text-align: unset;
+}
+
+ul > li {
+    text-align: unset;
 }
 
 main>input:focus {

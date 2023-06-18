@@ -15,8 +15,8 @@ for (const TLD of bannedTLDS) {
     }
 }
 
-console.log(bannedTLDS);
-console.log(TLDs);
+// console.log(bannedTLDS);
+// console.log(TLDs);
 
 
 nameInput.addEventListener('input', () => {
