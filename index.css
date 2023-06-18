@@ -66,6 +66,10 @@ main>input::placeholder {
     color: var(--txt-color)
 }
 
+li::marker {
+    list-style: inside square;
+}
+
 main>input:focus {
     outline: none;
 }
