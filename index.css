@@ -30,9 +30,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
+.flex-col-center>*,
+.sticky-right-button>span {
+    text-align: center;
+}
 
 body {
     margin: 0em 2em 0;
@@ -78,28 +81,33 @@ main>input:focus {
     max-width: 10vh;
     max-height: 10vh;
     overflow: hidden;
-    text-align: center;
 }
+
 .sticky-right-button:hover {
     background-color: rgba(127, 127, 127, 0.5);
     transition: background-color 400ms ease-in;
 }
+
 .sticky-right-button>img {
     height: 3em;
     width: 3em;
 }
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
-#hacks-list > li {
-	animation: fadeIn 250ms ease-in 0ms 1;
+
+#hacks-list>li {
+    animation: fadeIn 250ms ease-in 0ms 1;
 }
-#errors > li {
+
+#errors>li {
     animation: fadeIn 250ms ease-in 0ms 1;
     color: rgb(194, 44, 44);
 }
