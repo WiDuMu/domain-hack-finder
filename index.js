@@ -1,5 +1,3 @@
-"use strict";
-const fetchJSON = async (url, params) => (await fetch(url, params)).json();
 /** Fetch the list of TLDs */
 const TLDsRequest = fetch("https://data.iana.org/TLD/tlds-alpha-by-domain.txt");
 const BannedTLDsRequest = fetch("static/bannedTLDS.json");
@@ -20,7 +18,7 @@ nameInput.addEventListener("input", () => {
 	const errors = [];
 	const hacks = [];
 	if (brandName.length < 3) {
-		errors.push("Domain names less than 3 letters are not commonly available");
+		errors.push("Domain names less than 3 letters are not commonly available.");
 	}
 	brandName = nameInput.value;
 	console.log(brandName);
@@ -33,14 +31,15 @@ nameInput.addEventListener("input", () => {
 			hacks.push(li);
 		}
 	}
+
+	const errorsElements = [];
 	if (errors.length) {
-		const errorsElements = [];
 		for (const error of errors) {
 			const li = document.createElement("li");
 			li.textContent = error;
 			errorsElements.push(li);
 		}
-		errorsList.replaceChildren(...errorsElements);
 	}
+	errorsList.replaceChildren(...errorsElements);
 	hacksList.replaceChildren(...hacks);
 });
