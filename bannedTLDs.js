@@ -1,4 +1,4 @@
-[
+let bannedTLDS = [
     "AAA",
     "AARP",
     "ABARTH",
@@ -8,6 +8,9 @@
     "ABC",
     "ABLE",
     "ACCENTURE",
+    "ACER",
+    "ACO",
+    "ACTIVE",
     "ARPA",
     "MIL",
     "GOV",
@@ -134,4 +137,13 @@
     "BMW",
     "BANNANAREPUBLIC",
     "VOLKSWAGEN"
-]
+];
+
+const bannedTLDSet = new Set(bannedTLDS);
+
+bannedTLDS = [...bannedTLDSet];
+
+bannedTLDS.sort();
+
+console.log(JSON.stringify(bannedTLDS).split(",").join(",\n"));
+

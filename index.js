@@ -5,14 +5,10 @@ const nameInput = document.getElementById("lookup");
 const hacksList = document.getElementById("hacks-list");
 const errorsList = document.getElementById("errors");
 let brandName = nameInput.value;
-const TLDs = (await (await TLDsRequest).text()).split("\n").slice(1, -1);
-const bannedTLDS = await (await BannedTLDsRequest).json();
-for (const TLD of bannedTLDS) {
-	const index = TLDs.indexOf(TLD);
-	if (index > -1) {
-		TLDs.splice(index, 1);
-	}
-}
+let TLDs = new Set((await (await TLDsRequest).text()).split("\n").slice(1, -1));
+const bannedTLDS = new Set(await (await BannedTLDsRequest).json());
+TLDs = TLDs.difference(bannedTLDS);
+console.log(...TLDs);
 
 nameInput.addEventListener("input", () => {
 	const errors = [];
@@ -21,25 +17,21 @@ nameInput.addEventListener("input", () => {
 		errors.push("Domain names less than 3 letters are not commonly available.");
 	}
 	brandName = nameInput.value;
-	console.log(brandName);
 	for (const TLD of TLDs) {
-		const lowerBrand = brandName.toLowerCase().trim().split(" ").join("");
+		const lowerBrand = brandName.toLowerCase().trim().split(/[^A-z0-9-_]/gum).join("");
 		const lowerTLD = TLD.toLowerCase();
 		if (lowerBrand.endsWith(lowerTLD)) {
 			const li = document.createElement("li");
-			li.textContent = `${brandName.slice(0, brandName.length - TLD.length)}.${lowerTLD}`;
+			li.textContent = `${lowerBrand.slice(0, lowerBrand.length - TLD.length)}.${lowerTLD}`;
 			hacks.push(li);
 		}
 	}
 
-	const errorsElements = [];
-	if (errors.length) {
-		for (const error of errors) {
-			const li = document.createElement("li");
-			li.textContent = error;
-			errorsElements.push(li);
-		}
-	}
+	const errorsElements = errors.map(error => {
+		const li = document.createElement("li");
+		li.textContent = error;
+		return li;
+	});
 	errorsList.replaceChildren(...errorsElements);
 	hacksList.replaceChildren(...hacks);
 });
